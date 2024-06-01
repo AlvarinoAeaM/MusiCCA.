@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://127.0.0.1/data')
+    fetch('http://127.0.0.1/id22225728_musicca')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('data-container');
