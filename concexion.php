@@ -4,9 +4,9 @@ class Cconexion {
 
     function ConexionBD() {
         $host = '127.0.0.1';
-        $dbname = 'MusiCCA';
-        $username = 'ALVARINO\Usuario';
-        $password = '';
+        $dbname = 'id22225728_musicca';
+        $username = 'id22225728_cca';
+        $password = 'A20142511a+';
         $puerto = '1433';
 
         try {
