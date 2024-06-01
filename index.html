@@ -30,6 +30,73 @@ if (!$conn) {
     die("Conexión fallida: No se pudo conectar a la base de datos.");
 }
 
+$sql = "SELECT A.[Artist Name(s)], 
+               B.[Album Name], 
+               C.[Track Name], 
+               C.[Popularity], 
+               C.[Track_ID], 
+               C.[Track URI], 
+               C.[Track Duration (ms)], 
+               C.[Track Preview URL], 
+               B.[Album URI], 
+               B.[Album Artist URI(s)], 
+               B.[Album Artist Name(s)], 
+               B.[Album Release Date], 
+               B.[Album Image URL], 
+               A.[Artist URI(s)], 
+               A.[Artist Genres]
+        FROM [Cancion$] C
+        JOIN [Album$] B ON C.[Album_ID] = B.[Album_ID]
+        JOIN [Artista$] A ON B.[Artista_ID] = A.[Artista_ID]";
+
+$result = sqlsrv_query($conn, $sql);
+
+if ($result === false) {
+    die(print_r(sqlsrv_errors(), true));
+}
+
+// Mostrar los resultados
+echo "<table border='1'>";
+echo "<tr>
+        <th>Artist Name(s)</th>
+        <th>Album Name</th>
+        <th>Track Name</th>
+        <th>Popularity</th>
+        <th>Track ID</th>
+        <th>Track URI</th>
+        <th>Track Duration (ms)</th>
+        <th>Track Preview URL</th>
+        <th>Album URI</th>
+        <th>Album Artist URI(s)</th>
+        <th>Album Artist Name(s)</th>
+        <th>Album Release Date</th>
+        <th>Album Image URL</th>
+        <th>Artist URI(s)</th>
+        <th>Artist Genres</th>
+      </tr>";
+
+while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+    echo "<tr>
+            <td>{$row['Artist Name(s)']}</td>
+            <td>{$row['Album Name']}</td>
+            <td>{$row['Track Name']}</td>
+            <td>{$row['Popularity']}</td>
+            <td>{$row['Track_ID']}</td>
+            <td>{$row['Track URI']}</td>
+            <td>{$row['Track Duration (ms)']}</td>
+            <td>{$row['Track Preview URL']}</td>
+            <td>{$row['Album URI']}</td>
+            <td>{$row['Album Artist URI(s)']}</td>
+            <td>{$row['Album Artist Name(s)']}</td>
+            <td>{$row['Album Release Date']}</td>
+            <td>{$row['Album Image URL']}</td>
+            <td>{$row['Artist URI(s)']}</td>
+            <td>{$row['Artist Genres']}</td>
+          </tr>";
+}
+
+echo "</table>";
+
 
 $sqls = [
     "Discovery" => "SELECT A.`Artist Name(s)`, MAX(C.`Popularity`) AS MaxPopularity
@@ -37,17 +104,17 @@ $sqls = [
                     JOIN `Album$` B ON A.`Artista_ID` = B.`Artista_ID`
                     JOIN `Cancion$` C ON B.`Album_ID` = C.`Album_ID`
                     GROUP BY A.`Artist Name(s)`
-                    ORDER BY MaxPopularity DESC LIMIT 10",
+                    ORDER BY MaxPopularity DESC",
 
     "Singles" => "SELECT `Album Name`, `Album Release Date`
                   FROM `Album$`
-                  ORDER BY `Album Release Date` DESC LIMIT 10",
+                  ORDER BY `Album Release Date` DESC",
 
     "Canciones" => "SELECT `Track Name`, `Popularity`
                     FROM `Cancion$`
-                    ORDER BY `Popularity` DESC LIMIT 10",
+                    ORDER BY `Popularity` DESC",
 
-    "Generos" => "SELECT DISTINCT `Genre`
+    "Generos" => "SELECT DISTINCT `Artist Genres`
                   FROM `Cancion$`
                   ORDER BY `Genre`"
 ];
