@@ -166,7 +166,6 @@ while($row = $result11->fetch(PDO::FETCH_ASSOC)) {
     echo "Año: " . $row["ReleaseYear"]. " - Cantidad de álbumes: " . $row["AlbumCount"]. "<br>";
 }
 
-// Cierra la conexión
 $conn = null;
 
 ?>
