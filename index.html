@@ -1,3 +1,59 @@
+<?php
+
+// Archivo: Cconexion.php
+class Cconexion {
+
+    function ConexionBD() {
+        $host = '127.0.0.1';
+        $dbname = 'MusiCCA';
+        $username = 'ALVARINO\Usuario';
+        $password = '';
+        $puerto = '3306'; 
+
+        try {
+            $conn = new PDO("mysql:host=$host;port=$puerto;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
+        } catch (PDOException $exp) {
+            echo ("No se logró conectar correctamente con la base de datos: $dbname, error: $exp");
+            return null;
+        }
+    }
+}
+
+
+$conexion = new Cconexion();
+$conn = $conexion->ConexionBD();
+
+
+if (!$conn) {
+    die("Conexión fallida: No se pudo conectar a la base de datos.");
+}
+
+
+$sqls = [
+    "Discovery" => "SELECT A.`Artist Name(s)`, MAX(C.`Popularity`) AS MaxPopularity
+                    FROM `Artista$` A
+                    JOIN `Album$` B ON A.`Artista_ID` = B.`Artista_ID`
+                    JOIN `Cancion$` C ON B.`Album_ID` = C.`Album_ID`
+                    GROUP BY A.`Artist Name(s)`
+                    ORDER BY MaxPopularity DESC LIMIT 10",
+
+    "Singles" => "SELECT `Album Name`, `Album Release Date`
+                  FROM `Album$`
+                  ORDER BY `Album Release Date` DESC LIMIT 10",
+
+    "Canciones" => "SELECT `Track Name`, `Popularity`
+                    FROM `Cancion$`
+                    ORDER BY `Popularity` DESC LIMIT 10",
+
+    "Generos" => "SELECT DISTINCT `Genre`
+                  FROM `Cancion$`
+                  ORDER BY `Genre`"
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,16 +71,22 @@
   <body>
     <header>
       <div class="menu_side">
-        <h1>Playlist</h1>
+        <h1>Descovery</h1>
         <div class="playlist">
           <h4 class="active">
-            <span></span><i class="bi bi-music-note-beamed"></i> Playlist
+            <span></span><i class="bi bi-music-note-beamed"></i> Users
           </h4>
           <h4>
-            <span></span><i class="bi bi-music-note-beamed"></i> Last Listening
+            <span></span><i class="bi bi-music-note-beamed"></i> Genero
           </h4>
           <h4>
-            <span></span><i class="bi bi-music-note-beamed"></i> Recommended
+            <span></span><i class="bi bi-music-note-beamed"></i> Cancion
+          </h4>
+           <h4>
+            <span></span><i class="bi bi-music-note-beamed"></i> Singles
+          </h4>
+           <h4>
+            <span></span><i class="bi bi-music-note-beamed"></i> Dashboard
           </h4>
         </div>
         <div class="menu_song">
