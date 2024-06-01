@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>MusiCCA</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="menu_side">
+        <h1>Playlist</h1>
+        <div class="playlist">
+          <h4 class="active">
+            <span></span><i class="bi bi-music-note-beamed"></i> Playlist
+          </h4>
+          <h4>
+            <span></span><i class="bi bi-music-note-beamed"></i> Last Listening
+          </h4>
+          <h4>
+            <span></span><i class="bi bi-music-note-beamed"></i> Recommended
+          </h4>
+        </div>
+        <div class="menu_song">
+          <li class="songItem">
+            <span>01</span>
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b27313b3e37318a0c247b550bccd"
+              alt="Ed Sheeran"
+            />
+            <h5>
+              Sing
+              <div class="subtitle">Ed Sheeran</div>
+            </h5>
+            <i class="bi playListPlay bi-play-circle-fill" id="1"></i>
+          </li>
+          <li class="songItem">
+            <span>02</span>
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b2738a24ed638eedd60514a789ef"
+              alt="Shawn Mendes"
+            />
+            <h5>
+              Mercy
+              <div class="subtitle">Shawn Mendes</div>
+            </h5>
+            <i class="bi playListPlay bi-play-circle-fill" id="2"></i>
+          </li>
+          <li class="songItem">
+            <span>03</span>
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b2733889f04c48f6bf57649c282c"
+              alt="Miley Cyrus"
+            />
+            <h5>
+              Wrecking Ball
+              <div class="subtitle">Miley Cyrus</div>
+            </h5>
+            <i class="bi playListPlay bi-play-circle-fill" id="3"></i>
+          </li>
+          <li class="songItem">
+            <span>04</span>
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b273a9249ebb15ca7a5b75f16a90"
+              alt="Red Hot Chili Peppers"
+            />
+            <h5>
+              Californication
+              <div class="subtitle">Red Hot Chili Peppers</div>
+            </h5>
+            <i class="bi playListPlay bi-play-circle-fill" id="4"></i>
+          </li>
+          <li class="songItem">
+            <span>05</span>
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b2731f7077ae1018b5fbab08dfa8"
+              alt="Queen"
+            />
+            <h5>
+              We Will Rock You
+              <div class="subtitle">Queen</div>
+            </h5>
+            <i class="bi playListPlay bi-play-circle-fill" id="5"></i>
+          </li>
+          <li class="songItem">
+            <span>06</span>
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b273506c4cc93e5a6234164125e1"
+              alt="Eminem"
+            />
+            <h5>
+              We Made You
+              <div class="subtitle">Eminem</div>
+            </h5>
+            <i class="bi playListPlay bi-play-circle-fill" id="6"></i>
+          </li>
+        </div>
+      </div>
+
+      <div class="song_side">
+        <nav>
+          <ul>
+            <li>Discover <span></span></li>
+            <li>MY LIBRARY <span></span></li>
+            <li>RADIO <span></span></li>
+          </ul>
+          <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Music..." />
+          </div>
+          <div class="user">
+            <img src="images/music logo design.png" alt="User" title="MusiCCA" >
+          </div>
+        </nav>
+        <div class="content">
+            <h1>Young Miko</h1>
+            <p>
+                You were the shadow to my light Did you feel us Another start You
+                <br>fade Away afraid our aim is out of sight Wanna see us Alive.
+            </p>
+            <div class="buttons">
+                <button>PLAY</button>
+                <button>FOLLOW</button>
+            </div>
+        </div>
+        <div class="popular_song">
+          <div class="h4">
+            <h4>Popular Song</h4>
+            <div class="btn_5">
+              <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+              <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+            </div>
+          </div>
+          <div class="pop_song">
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="7"></i>
+              </div>
+              <h5>Aerobico Remix
+                <br>
+                <div class="subtitle">Bhavi</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Billi3.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="8"></i>
+              </div>
+              <h5>Lovely
+                <br>
+                <div class="subtitle">Billie Eilish</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/cro3.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="9"></i>
+              </div>
+              <h5>Interestelar
+                <br>
+                <div class="subtitle">C.R.O</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Dua3.jpeg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="10"></i>
+              </div>
+              <h5>Rules
+                <br>
+                <div class="subtitle">Dua Lipa</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Duki2.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="11"></i>
+              </div>
+              <h5>Givenchy
+                <br>
+                <div class="subtitle">Duki</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Em1.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="12"></i>
+              </div>
+              <h5>Lose Yourself
+                <br>
+                <div class="subtitle">Eminem</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/olivia-rodrigo.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="13"></i>
+              </div>
+              <h5>Vampire
+                <br>
+                <div class="subtitle">Olivia Rodrigo</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Miko3.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="14"></i>
+              </div>
+              <h5>Lisa
+                <br>
+                <div class="subtitle">Young Miko</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Nanpa2.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="15"></i>
+              </div>
+              <h5>Quiereme Asi
+                <br>
+                <div class="subtitle">Nanpa Basico</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/CancionesP/Nicki3.jpg" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="16"></i>
+              </div>
+              <h5>Colocao
+                <br>
+                <div class="subtitle">Nicki Nicole</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="17"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="18"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="19"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="20"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="21"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="22"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="23"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="24"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="25"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="26"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="27"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="28"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="29"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="30"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="31"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="images/ImagesP/B1.png" alt="">
+                <i class="bi playListPlay bi-play-circle-fill" id="32"></i>
+              </div>
+              <h5>Yellow
+                <br>
+                <div class="subtitle">Coldplay</div>
+              </h5>
+            </li>
+          </div>
+        </div>
+        <div class="popular_artists">
+          <div class="h4">
+            <h4>Popular Artists</h4>
+            <div class="btn_5">
+              <i id="left_scrolls" class="bi bi-arrow-left-short"></i>
+              <i id="right_scrolls" class="bi bi-arrow-right-short"></i>
+            </div>
+          </div>
+          <div class="item">
+            <li>
+              <img src="images/ImagesP/olivia-rodrigo.jpg" alt="Olivia Rodrigo" title="Olivia Rodrigo">
+            </li>
+            <li>
+              <img src="images/ImagesP/Ari1.png" alt="Ariana Grande" title="Ariana Grande">
+            </li>
+            <li>
+              <img src="images/ImagesP/Bruno1.jpeg" alt="Bruno Mars" title="Bruno Mars">
+            </li>
+            <li>
+              <img src="images/ImagesP/Billi2.jpg" alt="Billie Eilish" title="Billie Eilish">
+            </li>
+            <li>
+              <img src="images/ImagesP/cro3.jpg" alt="C.R.O" title="C.R.O">
+            </li>
+            <li>
+              <img src="images/ImagesP/Demi1.jpg" alt="Demi Lovato" title="Demi Lovato">
+            </li>
+            <li>
+              <img src="images/ImagesP/Drake1.jpg" alt="Drake" title="Drake">
+            </li>
+            <li>
+              <img src="images/ImagesP/Dua-Lipa.jpg" alt="Dua Lipa" title="Dua Lipa">
+            </li>
+            <li>
+              <img src="images/ImagesP/Duki1.jpg" alt="Duki" title="Duki">
+            </li>
+            <li>
+              <img src="images/ImagesP/Em1.jpg" alt="Eminem" title="Eminem">
+            </li>
+            <li>
+              <img src="images/ImagesP/Emi1.jpg" alt="Olivia Rodrigo" title="Olivia Rodrigo">
+            </li>
+            <li>
+              <img src="images/ImagesP/HM1.png" alt="Miley Cyrus" title="Miley Cyrus">
+            </li>
+            <li>
+              <img src="images/ImagesP/J1.png" alt="Justin Bieber" title="Justin Bieber">
+            </li>
+            <li>
+              <img src="images/ImagesP/Katy1.jpg" alt="Katy Perry" title="Katy Perry">
+            </li>
+            <li>
+              <img src="images/ImagesP/Maria1.jpg" alt="Maria Becerra" title="Maria Becerra">
+            </li>
+            <li>
+              <img src="images/ImagesP/Miko1.png" alt="Young Miko" title="Young Miko">
+            </li>
+            <li>
+              <img src="images/ImagesP/Milo1.jpg" alt="Milo J" title="Milo J">
+            </li>
+            <li>
+              <img src="images/ImagesP/Nanpa1.jpg" alt="Nanpa Basico" title="Nanpa Basico">
+            </li>
+            <li>
+              <img src="images/ImagesP/Nicki2.png" alt="Nicky Nicole" title="Nicky Nicole">
+            </li>
+            <li>
+              <img src="images/ImagesP/T2.png" alt="Olivia Rodrigo" title="Olivia Rodrigo">
+            </li>
+          </div>
+        </div>
+      </div>
+
+      <div class="master_play">
+        <div class="wave">
+          <div class="wave1"></div>
+          <div class="wave1"></div>
+          <div class="wave1"></div>
+        </div>
+        <img
+          src="https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0"
+          alt="Cold"
+        />
+        <h5>
+          Yellow <br />
+          <div class="subtitle">Coldplay</div>
+        </h5>
+        <div class="icon">
+          <i class="bi bi-skip-start-fill"></i>
+          <i class="bi bi-play-fill"></i>
+          <i class="bi bi-skip-end-fill"></i>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+          <input type="range" id="seek" min="0" value="0" max="100" />
+          <div class="bar2" id="bar2"></div>
+          <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:00</span>
+
+        <div class="vol">
+          <i class="bi bi-volume-down-fill"></i>
+          <input type="range" id="vol" min="0" value="30" max="100" />
+          <div class="vol_bar"></div>
+          <div class="dot" id="vol_dot"></div>
+        </div>
+      </div>
+    </header>
+    <script src="script.js"></script>
+    <!-- <script src="server.js"></script> -->
+  </body>
+</html>
