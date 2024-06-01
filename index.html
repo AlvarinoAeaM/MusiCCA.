@@ -8,7 +8,7 @@ class Cconexion {
         $dbname = 'MusiCCA';
         $username = 'ALVARINO\Usuario';
         $password = '';
-        $puerto = '3306'; 
+        $puerto = '1433'; 
 
         try {
             $conn = new PDO("mysql:host=$host;port=$puerto;dbname=$dbname", $username, $password);
