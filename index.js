@@ -223,38 +223,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Ruta al archivo CSV
-//     const csvFilePath = './b/Base.csv';
+document.addEventListener('DOMContentLoaded', function() {
+    const csvFilePath = './b/Base.csv';
 
-//     // Configuración de PapaParse para leer el CSV
-//     Papa.parse(csvFilePath, {
-//         download: true,
-//         header: true,
-//         complete: function(results) {
-//             // results.data contiene los datos del CSV como objetos JSON
-//             const songs = results.data;
-//             loadSongs(songs);
-//         }
-//     });
+    
+    Papa.parse(csvFilePath, {
+        download: true,
+        header: true,
+        complete: function(results) {
+          
+            const songs = results.data;
+            loadSongs(songs);
+        }
+    });
 
-//         function loadSongs(songs) {
-//         const songsContainer = document.querySelector('.songs');
-//         songs.forEach(song => {
-//             const songElement = document.createElement('div');
-//             songElement.classList.add('song');
+        function loadSongs(songs) {
+        const songsContainer = document.querySelector('.songs');
+        songs.forEach(song => {
+            const songElement = document.createElement('div');
+            songElement.classList.add('song');
             
-//             songElement.innerHTML = `
-//                 <img src="${song.image}" alt="" class="song-img">
-//                 <div class="song-title">
-//                     <span>${song.title}</span>
-//                     <span>${song.artist}</span>
-//                 </div>
-//                 <span class="song-time">${song.duration}</span>
-//                 <a href="#" class="btn-song-play"><i class="far fa-play-circle"></i></a>
-//             `;
+            songElement.innerHTML = `
+                <img src="${song.image}" alt="" class="song-img">
+                <div class="song-title">
+                    <span>${song.title}</span>
+                    <span>${song.artist}</span>
+                </div>
+                <span class="song-time">${song.duration}</span>
+                <a href="#" class="btn-song-play"><i class="far fa-play-circle"></i></a>
+            `;
 
-//             songsContainer.appendChild(songElement);
-//         });
-//     }
-// });
+            songsContainer.appendChild(songElement);
+        });
+    }
+});
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('http://127.0.0.1/data')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('data-container');
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.classList.add('data-item');
+                div.innerHTML = `
+                    <h3>${item.nombre}</h3>
+                    <p>${item.valor}</p>
+                `;
+                container.appendChild(div);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+});
