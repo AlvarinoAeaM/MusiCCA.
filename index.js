@@ -276,3 +276,48 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching data:', error));
 });
+
+/////
+
+// server.js
+const express = require('express');
+const mysql = require('mysql2');
+const cors = require('cors');
+const app = express();
+const port = 1433;
+
+app.use(cors());
+
+// Configuración de la conexión a la base de datos
+const db = mysql.createConnection({
+  host: '127.0.0.1',
+  user: 'id22225728_cca',
+  password: 'A20142511a',
+  database: 'id22225728_cca'
+});
+
+db.connect(err => {
+  if (err) {
+    console.error('Error conectando a la base de datos:', err);
+    return;
+  }
+  console.log('Conexión a la base de datos exitosa.');
+});
+
+// Ruta para obtener datos
+app.get('/data', (req, res) => {
+  const query = 'SELECT * FROM tu_tabla';
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('Error ejecutando la consulta:', err);
+      res.status(500).send('Error en el servidor');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Servidor corriendo en http://localhost:${port}`);
+});
+
